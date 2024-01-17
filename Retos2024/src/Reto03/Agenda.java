@@ -30,6 +30,9 @@ public class Agenda {
 
             switch (opcion) {
                 case 1:
+                    if (listaContactos.isEmpty()){
+                        System.out.println("Antes, crea un contacto");
+                    }
                     System.out.println("Introduce nombre de contacto a buscar: ");
                     String nombreBuscar = scanner.nextLine();
                     buscarContacto(nombreBuscar);
@@ -42,7 +45,7 @@ public class Agenda {
                     int anadirTelefono=scanner.nextInt();
 
                     Contactos nuevoContacto = new Contactos(anadirNombre,anadirTelefono);
-
+                    anadirContacto(nuevoContacto);
                     break;
                 case 3:
                     break;
@@ -77,7 +80,18 @@ public class Agenda {
 
         for (Contactos anadirContactos : listaContactos){
 
-            if (anadirContactos.getNombre().equalsIgnoreCase(c.getNombre()))
+            if (!anadirContactos.getNombre().equalsIgnoreCase(c.getNombre())){
+                System.out.println("Contacto creado correctamente");
+                listaContactos.add(c);
+                break;
+            } else if (anadirContactos.getNombre()==null){
+                System.out.println("Contacto no creado");
+                break;
+            } else if (anadirContactos.getNumeroTelefono() <=0) {
+                System.out.println("Contacto no creado");
+                break;
+                
+            }
 
         }
 
