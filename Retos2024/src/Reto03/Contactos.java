@@ -1,6 +1,8 @@
-public class Reto03 {
+package Reto03;
 
-        /*
+public class Contactos {
+
+    /*
      * EJERCICIO:
      * - Muestra ejemplos de creación de todas las estructuras soportadas por defecto en tu lenguaje.
      * - Utiliza operaciones de inserción, borrado, actualización y ordenación.
@@ -17,4 +19,35 @@ public class Reto03 {
      * - También se debe proponer una operación de finalización del programa.
      */
 
+        private String nombre;
+        private int numeroTelefono;
+
+        public Contactos(String nombre, int numeroTelefono) {
+            this.nombre = nombre;
+            this.numeroTelefono = numeroTelefono;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public int getNumeroTelefono() {
+            return numeroTelefono;
+        }
+
+        public void setNumeroTelefono(int numeroTelefono) {
+            this.numeroTelefono = numeroTelefono;
+        }
+
+        @Override
+        public String toString() {
+            return "Contactos{" +
+                    "nombre='" + nombre + '\'' +
+                    ", numeroTelefono=" + numeroTelefono +
+                    '}';
+        }
     }
